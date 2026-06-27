@@ -13,8 +13,8 @@ public class ProgrammingFactory implements QuestionFactory {
     public Question createQuestion() { return source.getQuestion("Programming"); }
 
     @Override
-    public QuestionRenderer createRenderer() { return q -> System.out.println("Rendering IDE Editor..."); }
+    public QuestionRenderer createRenderer() { return new ProgrammingRenderer(); }
 
     @Override
-    public QuestionEvaluator createEvaluator() { return (q, ans) -> 1; }
+    public QuestionEvaluator createEvaluator() { return new ProgrammingEvaluator(); }
 }

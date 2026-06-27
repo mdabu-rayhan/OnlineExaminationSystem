@@ -12,8 +12,8 @@ public class EssayFactory implements QuestionFactory {
     public Question createQuestion() { return source.getQuestion("Essay"); }
 
     @Override
-    public QuestionRenderer createRenderer() { return q -> System.out.println("Rendering Essay text box..."); }
+    public QuestionRenderer createRenderer() { return new  EssayRenderer(); }
 
     @Override
-    public QuestionEvaluator createEvaluator() { return (q, ans) -> 1; }
+    public QuestionEvaluator createEvaluator() { return new EssayEvaluator(); }
 }

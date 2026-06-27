@@ -12,8 +12,8 @@ public class MCQFactory implements QuestionFactory {
     public Question createQuestion() { return source.getQuestion("MCQ"); }
 
     @Override
-    public QuestionRenderer createRenderer() { return q -> System.out.println("Rendering MCQ UI..."); }
+    public QuestionRenderer createRenderer() { return new MCQRenderer(); }
 
     @Override
-    public QuestionEvaluator createEvaluator() { return (q, ans) -> 1; }
+    public QuestionEvaluator createEvaluator() { return new MCQEvaluator(); }
 }
